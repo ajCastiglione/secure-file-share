@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    @apply bg-slate-600;
+    @apply bg-slate-600 flex justify-center flex-col;
+    height: 100vh;
 }
 
 .form {
@@ -14,11 +15,16 @@ body {
     margin: 1rem auto 0;
 }
 
-.form button {
+.form button,
+.form a {
     grid-column: span 2;
 }
 
 .error {
     color: red;
     font-weight: bold;
+}
+
+.hide {
+    @apply hidden;
 }

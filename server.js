@@ -21,6 +21,7 @@ app.set("view engine", "ejs");
 
 // Load public files.
 app.use(express.static(__dirname + "/dist"));
+app.use(express.static(__dirname + "/assets"));
 
 // Set routes.
 app.get("/", (req, res) => {
@@ -48,11 +49,11 @@ async function handleDownload(req, res) {
 
   if (file.password != null) {
     if (req.body.password == null) {
-      res.render("password");
+      res.render("password", { home: `${req.protocol}://${req.headers.host}` });
       return;
     }
     if (!(await bcrypt.compare(req.body.password, file.password))) {
-      res.render("password", { error: true });
+      res.render("password", { error: true, home: `${req.protocol}://${req.headers.host}` });
       return;
     }
   }
