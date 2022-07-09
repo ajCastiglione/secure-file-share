@@ -5,21 +5,50 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Secure File Share</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/output.css" />
     </head>
     <body>
         <% if(locals.fileLink != null) { %>
-        <div class="file-download">
+        <div class="file-download text-center my-8 text-white">
             <p>Your file is uploaded.</p>
-            <a href="<%= locals.fileLink %>">Copy this link to share the document!</a>
+            <a
+                href="<%= locals.fileLink %>"
+                class="border-b-2 border-b-teal-400 hover:border-b-teal-500 font-semibold"
+            >
+                Copy this link to share the document!
+            </a>
         </div>
         <% } %>
         <form class="form" method="POST" action="/upload" enctype="multipart/form-data">
-            <label for="file">File:</label>
-            <input type="file" name="file" id="file" required />
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" />
-            <button type="submit">Share</button>
+            <label
+                for="file"
+                class="text-xs place-self-center font-semibold inline-block py-1 px-2 rounded text-teal-400 uppercase last:mr-0 mr-1"
+                >File:</label
+            >
+            <input
+                type="file"
+                name="file"
+                id="file"
+                required
+                class="block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100"
+            />
+            <label
+                for="password"
+                class="text-xs place-self-center font-semibold inline-block py-1 px-2 rounded text-teal-400 uppercase last:mr-0 mr-1"
+                >Password:</label
+            >
+            <input
+                type="password"
+                name="password"
+                id="password"
+                class="shadow appearance-none border border-teal-500 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <button
+                type="submit"
+                class="rounded-full font-semibold bg-teal-500 mt-2 text-white py-1 hover:bg-teal-700 ease-linear duration-100"
+            >
+                Share
+            </button>
         </form>
     </body>
 </html>

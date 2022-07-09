@@ -20,7 +20,7 @@ mongoose.connect(process.env.DATABASE_URL, () => console.log("Connected to DB"))
 app.set("view engine", "ejs");
 
 // Load public files.
-app.use(express.static(__dirname + "/assets"));
+app.use(express.static(__dirname + "/dist"));
 
 // Set routes.
 app.get("/", (req, res) => {
