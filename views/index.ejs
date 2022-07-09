@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Secure File Share</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    </head>
+    <body>
+        <% if(locals.fileLink != null) { %>
+        <div class="file-download">
+            <p>Your file is uploaded.</p>
+            <a href="<%= locals.fileLink %>">Copy this link to share the document!</a>
+        </div>
+        <% } %>
+        <form class="form" method="POST" action="/upload" enctype="multipart/form-data">
+            <label for="file">File:</label>
+            <input type="file" name="file" id="file" required />
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" />
+            <button type="submit">Share</button>
+        </form>
+    </body>
+</html>
