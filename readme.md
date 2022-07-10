@@ -4,7 +4,7 @@ This is a simple application to securely share files with your friends.
 
 ## How to use
 
-1. Access the homepage (localhost:5000) to upload a file.
+1. Access the homepage (https://secure-file-share.herokuapp.com/) to upload a file.
 2. (Optional) Add a password to the file.
 3. Share the file with your friends by clicking the share button.
 4. Download the file by clicking the download button while you're on the unique URL from the previous step.
