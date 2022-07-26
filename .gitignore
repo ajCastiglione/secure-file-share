@@ -1,5 +1,11 @@
+# Modules
 node_modules
+# Configurations
 config
 .env
+# File uploads
 uploads
+# Compiled files
 dist
+# Tests
+cypress/downloads
